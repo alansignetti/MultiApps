@@ -6,17 +6,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./piano.component.scss'],
 })
 export class PianoComponent implements OnInit {
+  public audio = new Audio();
+  public audioFiles: string[] = [];
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cargarSonido();
+  }
+
+  public cargarSonido() {
+    for (let i = 1; i <= 7; i++) {
+      this.audioFiles.push(
+        'https://raw.githubusercontent.com/alansignetti/MultiApps/main/src/assets/piano/Sounds/note' +
+          i +
+          '.wav'
+      );
+      this.resolve();
+    }
+  }
 
   public aplicarSonido(arg: number) {
-    const audio = new Audio();
-    audio.src =
-      'https://github.com/alansignetti/MultiApps/tree/main/src/assets/piano/Sounds/note' +
-      arg +
-      '.wav';
-    audio.load();
-    audio.play();
+    const sonido = new Audio();
+
+    sonido.src = this.audioFiles[arg - 1];
+    sonido.load();
+    sonido.play();
+    console.log(sonido.src);
   }
+
+  private preloadAudio = (url: string): Promise<string> => {
+    const audio = new Audio();
+    audio.src = url;
+    return new Promise((res, req) =>
+      audio.addEventListener('canplaythrough', () => res(url), false)
+    );
+    // once file is loaded, the promise will be resolved
+    // the file will be kept by the browser as cache
+  };
+  private resolve = (): Promise<string[]> =>
+    Promise.all(this.audioFiles.map(this.preloadAudio));
 }
