@@ -31,7 +31,6 @@ export class PianoComponent implements OnInit {
     sonido.src = this.audioFiles[arg - 1];
     sonido.load();
     sonido.play();
-    console.log(sonido.src);
   }
 
   private preloadAudio = (url: string): Promise<string> => {
