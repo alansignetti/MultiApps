@@ -12,7 +12,10 @@ export class PianoComponent implements OnInit {
 
   public aplicarSonido(arg: number) {
     const audio = new Audio();
-    audio.src = '../../../assets/piano/Sounds/note' + arg + '.wav';
+    audio.src =
+      'https://github.com/alansignetti/MultiApps/tree/main/src/assets/piano/Sounds/note' +
+      arg +
+      '.wav';
     audio.load();
     audio.play();
   }
