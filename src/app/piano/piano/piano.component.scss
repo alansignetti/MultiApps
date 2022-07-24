@@ -1,0 +1,24 @@
+.list-group-item {
+    cursor: pointer;
+    height: 50px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+.list-group-item:hover {
+    opacity: 0.7;
+}
+
+.list-group-item:active {
+    transition: .05s linear 0s;
+    transform: scaleY(1.1);
+    // transform: scaleX(1.05);
+}
