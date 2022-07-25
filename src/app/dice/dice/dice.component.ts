@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dice.component.scss'],
 })
 export class DiceComponent implements OnInit {
-  public leftDice = '../../../assets/dice/dice1.png';
-  public rightDice = '../../../assets/dice/dice2.png';
+  public leftDice = 'src/assets/dice/dice/dice1.png';
+  public rightDice = 'src/assets/dice/dice/dice2.png';
   public num1: number = 1;
   public num2: number = 0;
   public disabled: boolean = false;
