@@ -6,19 +6,27 @@ import { PianoComponent } from './piano/piano/piano.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PianoComponent,
-    HomeComponent
-  ],
+  declarations: [AppComponent, PianoComponent, HomeComponent, SidenavComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    MatNativeDateModule,
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
