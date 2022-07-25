@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DiceComponent implements OnInit {
   public leftDice = '../../../assets/dice/dice1.png';
   public rightDice = '../../../assets/dice/dice2.png';
-  public num1: number = 0;
+  public num1: number = 1;
   public num2: number = 0;
   public disabled: boolean = false;
   constructor() {}
