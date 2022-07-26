@@ -26,10 +26,9 @@ export class DiceComponent implements OnInit {
   public disableButton() {
     if (this.num1 === this.num2) {
       this.disabled = true;
+      setTimeout(() => {
+        this.disabled = false;
+      }, 1000);
     }
-
-    setTimeout(() => {
-      this.disabled = false;
-    }, 2500);
   }
 }
